@@ -653,3 +653,11 @@ starts in the air), `SCR_ENABLE 1` and `scripts/vio_gps_switch.lua` in `APM/scri
   tuned: while on GPS, the EKF already compares the VIO with its GPS-aided estimate (innovations of the
   unused source), so the VIO can be scored on every flight. The Jetson should also send a quality value,
   so `VISO_QUAL_MIN` can drop VIO data that the VIO itself doesn't trust.
+
+## License
+
+Copyright (C) 2026 Derin Hakan Karakurt. This project is free software under the GNU General Public License,
+version 3 ([LICENSE](LICENSE)) - the same license as ArduPilot and OpenVINS, which it builds on and changes
+(the Lua script runs in ArduPilot; `setup/openvins_init_from_state.py` and `setup/ardupilot_gazebo_airspeed.py`
+patch OpenVINS and ArduPilot's Gazebo plugin). It comes with NO WARRANTY: it is experimental navigation
+software for a model aircraft - test it in the simulator and with a safety pilot, and fly within the law.
