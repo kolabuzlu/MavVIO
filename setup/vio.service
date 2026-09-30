@@ -1,0 +1,20 @@
+# The VIO chain on the plane's Jetson, started at boot (setup/jetson_install.sh fills in @USER@ and @VIO@
+# and installs it as /etc/systemd/system/vio.service, switched off).
+#   switch on:  sudo systemctl enable vio        now: sudo systemctl start vio
+#   switch off: sudo systemctl disable vio       watch: journalctl -u vio -f   (and ~/vio_logs/<time>/)
+# Settings (serial port, camera position, resolution, recording) in setup/vio.env.
+[Unit]
+Description=VIO companion: RealSense D455 -> OpenVINS -> flight controller (MAVLink)
+After=network.target
+
+[Service]
+Type=simple
+User=@USER@
+WorkingDirectory=@VIO@
+EnvironmentFile=@VIO@/setup/vio.env
+ExecStart=/bin/bash @VIO@/setup/run_vio_d455.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,9 @@
+    0.0 s  flight mode -> AUTO
+   60.1 s  TEST: GPS switched OFF
+   61.4 s  vehicle: VSW: GPS lost, no VIO - dead reckoning
+   61.4 s  vehicle: VSW: bank limit 20 deg while without GPS
+   71.5 s  flight mode -> RTL
+   71.5 s  vehicle: VSW: no GPS or VIO - returning home (RTL)
+  100.1 s  TEST: GPS switched ON
+  110.5 s  EKF source set -> 1
+  110.5 s  vehicle: VSW: GPS good again

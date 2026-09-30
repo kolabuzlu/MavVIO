@@ -1,0 +1,15 @@
+    0.0 s  flight mode -> FBWA
+   39.0 s  flight mode -> CIRCLE
+   40.1 s  TEST: wind shift to 6 m/s from 250 deg
+   54.1 s  flight mode -> AUTO
+   54.1 s  flight mode -> GUIDED
+  760.7 s  TEST: GPS switched OFF
+  762.1 s  EKF source set -> 2
+  762.1 s  vehicle: VSW: GPS lost, switched to visual odometry
+  762.1 s  vehicle: VSW: bank limit 20 deg, RTL circle 112 m
+  762.1 s  flight mode -> RTL
+  762.1 s  vehicle: VSW: GPS lost, on VIO - returning home (RTL)
+  821.7 s  TEST: wind shift to 9 m/s from 200 deg
+ 1000.6 s  TEST: GPS switched ON
+ 1011.1 s  EKF source set -> 1
+ 1011.1 s  vehicle: VSW: GPS good again, switched back to GPS

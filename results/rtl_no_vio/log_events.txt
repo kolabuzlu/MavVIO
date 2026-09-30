@@ -1,0 +1,9 @@
+    0.0 s  flight mode -> AUTO
+  150.1 s  TEST: GPS switched OFF
+  151.5 s  vehicle: VSW: GPS lost, no VIO - dead reckoning
+  161.5 s  flight mode -> RTL
+  161.5 s  vehicle: VSW: no GPS or VIO - returning home (RTL)
+  210.1 s  TEST: wind shift to 9 m/s from 310 deg
+  330.1 s  TEST: GPS switched ON
+  340.5 s  EKF source set -> 1
+  340.5 s  vehicle: VSW: GPS good again

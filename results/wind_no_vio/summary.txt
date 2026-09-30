@@ -1,0 +1,8 @@
+run 'wind_no_vio' - from the flight log, true vs estimated position matched in time
+before GPS loss        : position error mean    0.39 m, 95% below    0.55 m, max    0.59 m over   90 s
+GPS off, no VIO in use : position error mean  324.46 m, 95% below  886.47 m, max  950.67 m over  180 s
+after GPS came back    : position error below 5 m again 0.4 s after GPS returned
+  150.1 s  TEST: GPS switched OFF
+  151.3 s  vehicle: VSW: GPS lost but visual odometry unhealthy
+  210.1 s  TEST: wind shift to 9 m/s from 310 deg
+  330.1 s  TEST: GPS switched ON

@@ -1,0 +1,12 @@
+  150.1 s  TEST: GPS switched OFF
+  150.1 s  TEST: simulated VIO starts drifting
+  151.4 s  EKF source set -> 2
+  151.4 s  vehicle: VSW: GPS lost, switched to visual odometry
+  151.4 s  vehicle: VSW: bank limit 20 deg while without GPS
+  190.1 s  TEST: simulated VIO starts running away
+  233.6 s  EKF source set -> 1
+  233.6 s  vehicle: VSW: VIO rejected, 13 m/s off airspeed
+  233.6 s  vehicle: VSW: dead reckoning until GPS returns
+  330.1 s  TEST: GPS switched ON
+  340.4 s  EKF source set -> 1
+  340.4 s  vehicle: VSW: GPS good again

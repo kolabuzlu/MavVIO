@@ -1,0 +1,10 @@
+run 'vio_switch' - from the flight log, true vs estimated position matched in time
+GPS in use             : position error mean   0.48 m, 95% below   0.51 m, max   0.54 m over   165 s
+GPS off, VIO in use    : position error mean   0.17 m, 95% below   0.26 m, max   0.34 m over   179 s
+GPS off, no VIO in use : position error mean   0.45 m, 95% below   0.47 m, max   0.48 m over     1 s
+  150.1 s  TEST: GPS switched OFF
+  151.6 s  EKF source set -> 2
+  151.6 s  vehicle: VSW: GPS lost, switched to visual odometry
+  330.1 s  TEST: GPS switched ON
+  340.6 s  EKF source set -> 1
+  340.6 s  vehicle: VSW: GPS good again, switched back to GPS

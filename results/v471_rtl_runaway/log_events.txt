@@ -1,0 +1,15 @@
+    0.0 s  flight mode -> AUTO
+  150.3 s  TEST: GPS switched OFF
+  150.3 s  TEST: simulated VIO starts drifting
+  151.7 s  EKF source set -> 2
+  151.7 s  vehicle: VSW: GPS lost, switched to visual odometry
+  151.7 s  vehicle: VSW: bank limit 20 deg, RTL circle 244 m
+  190.3 s  TEST: simulated VIO starts running away
+  193.3 s  EKF source set -> 1
+  193.3 s  vehicle: VSW: VIO rejected, disagrees with IMU (1.4)
+  193.3 s  vehicle: VSW: dead reckoning until GPS returns
+  203.4 s  flight mode -> RTL
+  203.4 s  vehicle: VSW: no GPS or VIO - returning home (RTL)
+  330.3 s  TEST: GPS switched ON
+  340.7 s  EKF source set -> 1
+  340.7 s  vehicle: VSW: GPS good again

@@ -1,0 +1,19 @@
+run 'gz_dr_rtl_wind' - from the flight log, true vs estimated position matched in time
+before GPS loss        : position error mean    0.20 m, 95% below    0.21 m, max    0.22 m over   39 s
+GPS off, dead reckoning: position error mean  278.26 m, 95% below  722.13 m, max  775.97 m over  172 s
+after GPS came back    : position error below 5 m again 0.4 s after GPS returned
+at GPS return          : position error 776.2 m
+bank angle             : max 29.8 deg before GPS loss, 43.7 deg without GPS (bank limit unchanged)
+RTL                    : at 110.2 s (11.4 s after GPS loss)
+circling home, no GPS  : RTL circle 60-60 m; really 2-819 m from home (mean 348 m), ArduPilot thought 54-77 m
+    0.0 s  flight mode -> FBWA
+   38.1 s  flight mode -> CIRCLE
+   52.6 s  flight mode -> AUTO
+   98.8 s  TEST: GPS switched OFF
+  100.1 s  vehicle: VSW: GPS lost, no VIO - dead reckoning
+  110.1 s  flight mode -> RTL
+  110.1 s  vehicle: VSW: no GPS or VIO - returning home (RTL)
+  157.2 s  TEST: wind shift to 9 m/s from 310 deg
+  271.1 s  TEST: GPS switched ON
+  281.5 s  EKF source set -> 1
+  281.5 s  vehicle: VSW: GPS good again

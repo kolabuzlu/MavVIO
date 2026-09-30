@@ -1,0 +1,32 @@
+    0.0 s  flight mode -> FBWA
+   38.5 s  flight mode -> CIRCLE
+   53.6 s  flight mode -> GUIDED
+   83.5 s  flight mode -> LOITER
+ 1052.2 s  flight mode -> GUIDED
+ 1132.9 s  EKF source set -> 2
+ 1132.9 s  vehicle: VSW: GPS lost, switched to visual odometry
+ 1132.9 s  vehicle: VSW: bank limit 20 deg, RTL circle 60 m
+ 1132.9 s  flight mode -> RTL
+ 1132.9 s  vehicle: VSW: GPS lost, on VIO - returning home (RTL)
+ 1134.1 s  EKF source set -> 1
+ 1134.1 s  vehicle: VSW: VIO rejected, disagrees with IMU (1.5)
+ 1134.1 s  vehicle: VSW: dead reckoning until GPS returns
+ 1256.6 s  EKF source set -> 1
+ 1256.6 s  vehicle: VSW: GPS good again
+ 1265.0 s  flight mode -> GUIDED
+ 1305.2 s  EKF source set -> 2
+ 1305.2 s  vehicle: VSW: GPS lost, switched to visual odometry
+ 1305.2 s  vehicle: VSW: bank limit 20 deg, RTL circle 109 m
+ 1305.2 s  flight mode -> RTL
+ 1305.2 s  vehicle: VSW: GPS lost, on VIO - returning home (RTL)
+ 1371.0 s  EKF source set -> 1
+ 1371.0 s  vehicle: VSW: GPS good again, switched back to GPS
+ 1425.7 s  flight mode -> GUIDED
+ 1471.2 s  EKF source set -> 2
+ 1471.2 s  vehicle: VSW: GPS lost, switched to visual odometry
+ 1471.2 s  vehicle: VSW: bank limit 20 deg, RTL circle 111 m
+ 1471.2 s  flight mode -> RTL
+ 1471.2 s  vehicle: VSW: GPS lost, on VIO - returning home (RTL)
+ 1472.3 s  EKF source set -> 1
+ 1472.3 s  vehicle: VSW: VIO rejected, disagrees with IMU (2.1)
+ 1472.3 s  vehicle: VSW: dead reckoning until GPS returns

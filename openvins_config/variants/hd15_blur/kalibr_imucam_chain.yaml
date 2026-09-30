@@ -1,0 +1,19 @@
+%YAML:1.0
+# VIO camera of the Zephyr in the Gazebo VIO world (tools/make_scenery.py --camera d455) - like the RealSense D455 colour camera - 848x480, 91 deg wide, 30 per second.
+# 1280 x 800 variant (tools/make_scenery.py --camera d455-800). A perfect pinhole, so fx = fy = 640 / tan(45.5 deg) = 629.21, centre (640, 400), no distortion.
+# The VIO IMU sits in the camera module, whose frame is x = down, y = left, z = forward in level
+# flight; T_imu_cam turns the camera's optical frame (z = viewing direction, x = right, y = down) into it.
+
+cam0:
+  T_imu_cam: # rotation from camera to IMU R_CtoI, position of camera in IMU p_CinI
+    - [0.0, 0.0, 1.0, 0.0]
+    - [-1.0, 0.0, 0.0, 0.0]
+    - [0.0, -1.0, 0.0, 0.0]
+    - [0.0, 0.0, 0.0, 1.0]
+  cam_overlaps: []
+  camera_model: pinhole
+  distortion_coeffs: [0.0, 0.0, 0.0, 0.0]
+  distortion_model: radtan
+  intrinsics: [629.21, 629.21, 640.0, 400.0] # fu, fv, cu, cv (the simulated D455, a perfect pinhole)
+  resolution: [1280, 800]
+  rostopic: /vio/camera_blur

@@ -1,0 +1,31 @@
+%YAML:1.0
+# ZED 2i stereo camera on the InGVIO fixed-wing plane (1280x720), from InGVIO config/fw_zed2i_f9p
+# (stereo_left_config.yaml / stereo_right_config.yaml: extrinsicRotation = R^imu_cam, extrinsicTranslation = t^imu_cam).
+# OpenVINS uses the same convention: T_imu_cam = [R_CtoI | p_CinI].
+
+cam0:
+  T_imu_cam: #rotation from camera to IMU R_CtoI, position of camera in IMU p_CinI
+    - [0.01301095634388352, -0.005070623738001712, 0.9999024971415602, 0.03671615355111148]
+    - [-0.9999097972900367, 0.003267771869320563, 0.01302762259241452, 0.02169026717979497]
+    - [-0.003333511424589375, -0.9999818050554322, -0.005027649516865795, -0.0000578135929000942]
+    - [0.0, 0.0, 0.0, 1.0]
+  cam_overlaps: [1]
+  camera_model: pinhole
+  distortion_coeffs: [-0.013323572637177162, 0.012297484726727028, -0.0008173313551158254, -0.0036129297585792528]
+  distortion_model: radtan
+  intrinsics: [528.0821562999166, 528.1818555071027, 646.6309796410819, 351.87255392593374] #fu, fv, cu, cv
+  resolution: [1280, 720]
+  rostopic: /cam0/image_raw
+cam1:
+  T_imu_cam: #rotation from camera to IMU R_CtoI, position of camera in IMU p_CinI
+    - [0.01129080808837021, -0.004471320310557636, 0.9999262597548844, 0.03767186874423049]
+    - [-0.9999301632412926, 0.00344058703135805, 0.01130623726631103, -0.0980688527108189]
+    - [-0.003490887129951881, -0.9999840847011319, -0.004432161040157589, -0.0002632245838794373]
+    - [0.0, 0.0, 0.0, 1.0]
+  cam_overlaps: [0]
+  camera_model: pinhole
+  distortion_coeffs: [-0.013705400292675644, 0.01351956571839721, -0.000806913038206586, -0.0028638404748635034]
+  distortion_model: radtan
+  intrinsics: [527.4644311562542, 527.9383388808839, 647.6983568199339, 351.1977685749355] #fu, fv, cu, cv
+  resolution: [1280, 720]
+  rostopic: /cam1/image_raw

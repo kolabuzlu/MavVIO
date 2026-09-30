@@ -1,0 +1,101 @@
+diff --git a/ov_msckf/src/ros/ROS2Visualizer.cpp b/ov_msckf/src/ros/ROS2Visualizer.cpp
+index e91cd74..29420bc 100644
+--- a/ov_msckf/src/ros/ROS2Visualizer.cpp
++++ b/ov_msckf/src/ros/ROS2Visualizer.cpp
+@@ -96,6 +96,36 @@ ROS2Visualizer::ROS2Visualizer(std::shared_ptr<rclcpp::Node> node, std::shared_p
+     DatasetReader::load_gt_file(path_to_gt, gt_states);
+     PRINT_DEBUG("gt file path is: %s\n", path_to_gt.c_str());
+   }
++  // vio project: optionally start from a given state (see callback_inertial)
++  if (node->has_parameter("init_from_gt")) {
++    node->get_parameter<bool>("init_from_gt", init_from_gt);
++  }
++  if (node->has_parameter("init_from_topic")) {
++    node->get_parameter<bool>("init_from_topic", init_from_topic);
++  }
++  if (init_from_topic) {
++    // pose of the IMU in the world frame, twist.linear = its velocity in the world frame
++    sub_init_state = node->create_subscription<nav_msgs::msg::Odometry>(
++        "init_state", 10, [this](const nav_msgs::msg::Odometry::SharedPtr msg) {
++          Eigen::Matrix<double, 17, 1> s = Eigen::Matrix<double, 17, 1>::Zero();
++          s(0) = msg->header.stamp.sec + msg->header.stamp.nanosec * 1e-9;
++          // a Hamilton IMU-to-world quaternion has the same x, y, z, w as OpenVINS's JPL world-to-IMU one
++          s(1) = msg->pose.pose.orientation.x;
++          s(2) = msg->pose.pose.orientation.y;
++          s(3) = msg->pose.pose.orientation.z;
++          s(4) = msg->pose.pose.orientation.w;
++          s(5) = msg->pose.pose.position.x;
++          s(6) = msg->pose.pose.position.y;
++          s(7) = msg->pose.pose.position.z;
++          s(8) = msg->twist.twist.linear.x;
++          s(9) = msg->twist.twist.linear.y;
++          s(10) = msg->twist.twist.linear.z;
++          std::lock_guard<std::mutex> lck(init_state_mtx);
++          init_state_value = s;
++          init_state_pending = true;
++        });
++    PRINT_INFO(GREEN "[INIT]: waiting for the start state on init_state\n" RESET);
++  }
+ 
+   // Load if we should save the total state to file
+   // If so, then open the file and create folders as needed
+@@ -443,6 +473,28 @@ void ROS2Visualizer::callback_inertial(const sensor_msgs::msg::Imu::SharedPtr ms
+   message.wm << msg->angular_velocity.x, msg->angular_velocity.y, msg->angular_velocity.z;
+   message.am << msg->linear_acceleration.x, msg->linear_acceleration.y, msg->linear_acceleration.z;
+ 
++  // vio project: start from the given state at the first IMU message that has it (as a flight
++  // controller would give it while GPS is still good) instead of OpenVINS's own initializers
++  if ((init_from_gt || init_from_topic) && !init_from_gt_done) {
++    Eigen::Matrix<double, 17, 1> imustate = Eigen::Matrix<double, 17, 1>::Zero();
++    bool have_state = false;
++    if (init_from_gt && !gt_states.empty()) {
++      have_state = DatasetReader::get_gt_state(message.timestamp, imustate, gt_states);
++    } else if (init_from_topic) {
++      std::lock_guard<std::mutex> lck(init_state_mtx);
++      if (init_state_pending && message.timestamp >= init_state_value(0)) {
++        imustate = init_state_value;
++        have_state = true;
++      }
++    }
++    if (have_state) {
++      imustate(0, 0) = message.timestamp;
++      _app->initialize_with_gt(imustate);
++      init_from_gt_done = true;
++      PRINT_INFO(GREEN "[INIT]: started from the given state at %.3f s\n" RESET, message.timestamp);
++    }
++  }
++
+   // send it to our VIO system
+   _app->feed_measurement_imu(message);
+   visualize_odometry(message.timestamp);
+@@ -497,6 +549,10 @@ void ROS2Visualizer::callback_inertial(const sensor_msgs::msg::Imu::SharedPtr ms
+ 
+ void ROS2Visualizer::callback_monocular(const sensor_msgs::msg::Image::SharedPtr msg0, int cam_id0) {
+ 
++  // vio project: no pictures before the start from the given state
++  if ((init_from_gt || init_from_topic) && !init_from_gt_done)
++    return;
++
+   // Check if we should drop this image
+   double timestamp = msg0->header.stamp.sec + msg0->header.stamp.nanosec * 1e-9;
+   double time_delta = 1.0 / _app->get_params().track_frequency;
+diff --git a/ov_msckf/src/ros/ROS2Visualizer.h b/ov_msckf/src/ros/ROS2Visualizer.h
+index a737f80..e77e2ef 100644
+--- a/ov_msckf/src/ros/ROS2Visualizer.h
++++ b/ov_msckf/src/ros/ROS2Visualizer.h
+@@ -198,6 +198,15 @@ protected:
+   // Our groundtruth states
+   std::map<double, Eigen::Matrix<double, 17, 1>> gt_states;
+ 
++  // vio project: start from a given state (path_gt file or init_state topic) instead of the built-in initializers
++  bool init_from_gt = false;
++  bool init_from_topic = false;
++  bool init_from_gt_done = false;
++  std::mutex init_state_mtx;
++  bool init_state_pending = false;
++  Eigen::Matrix<double, 17, 1> init_state_value = Eigen::Matrix<double, 17, 1>::Zero();
++  rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr sub_init_state;
++
+   // For path viz
+   std::vector<geometry_msgs::msg::PoseStamped> poses_gt;
+   bool publish_global2imu_tf = true;

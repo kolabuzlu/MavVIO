@@ -1,0 +1,15 @@
+run 'wind_real_vio' - from the flight log, true vs estimated position matched in time
+before GPS loss        : position error mean    0.41 m, 95% below    0.57 m, max    0.64 m over   90 s
+GPS off, VIO in use    : position error mean   36.01 m, 95% below   68.04 m, max   71.99 m over  179 s
+after GPS came back    : position error below 5 m again 10.6 s after GPS returned
+  150.1 s  TEST: GPS switched OFF
+  150.1 s  TEST: simulated VIO starts drifting
+  151.5 s  EKF source set -> 2
+  151.5 s  vehicle: VSW: GPS lost, switched to visual odometry
+  210.1 s  TEST: wind shift to 9 m/s from 310 deg
+  250.1 s  TEST: simulated VIO dropout starts
+  250.5 s  vehicle: VSW: visual odometry unhealthy while in use
+  258.1 s  TEST: simulated VIO dropout ends
+  330.1 s  TEST: GPS switched ON
+  340.5 s  EKF source set -> 1
+  340.5 s  vehicle: VSW: GPS good again, switched back to GPS

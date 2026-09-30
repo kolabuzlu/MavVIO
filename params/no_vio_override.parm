@@ -1,0 +1,6 @@
+# Loaded after vio_plane.parm for the "no VIO" comparison run: a plane without visual odometry.
+# Source set 2 must not refer to ExternalNav, or pre-arm fails with "EK3 sources require VisualOdom".
+VISO_TYPE 0
+EK3_SRC2_POSXY 0
+EK3_SRC2_VELXY 0
+EK3_SRC2_VELZ 0

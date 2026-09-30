@@ -1,0 +1,28 @@
+# Python environment and caches
+venv/
+__pycache__/
+*.pyc
+
+# Mission Planner's simulator folder (its logs and eeprom) - large and local
+sitl/
+
+# third-party datasets (EuRoC, InGVIO ground truth) - download them from their sources
+datasets/
+
+# personal: parameter backups, and the mission flown around the owner's home
+backups/
+missions/
+
+# results: keep the plots, pictures, summaries and test logs; leave out the raw data (large)
+results/**/data/
+results/**/*.csv
+results/**/*.txt
+results/**/*.log
+results/**/*.BIN
+!results/**/summary.txt
+!results/**/test.log
+!results/**/test_output.txt
+!results/**/log_events.txt
+
+# build logs
+setup/*.log

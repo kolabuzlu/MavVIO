@@ -1,0 +1,6 @@
+  150.1 s  TEST: GPS switched OFF
+  151.6 s  EKF source set -> 2
+  151.6 s  vehicle: VSW: GPS lost, switched to visual odometry
+  330.1 s  TEST: GPS switched ON
+  340.6 s  EKF source set -> 1
+  340.6 s  vehicle: VSW: GPS good again, switched back to GPS

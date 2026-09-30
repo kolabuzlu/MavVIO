@@ -1,0 +1,19 @@
+run 'smoke_runaway' - from the flight log, true vs estimated position matched in time
+GPS off, VIO in use    : position error mean    1.25 m, 95% below    8.74 m, max   12.24 m over   12 s
+GPS off, dead reckoning: position error mean   73.85 m, 95% below  107.32 m, max  110.54 m over   33 s
+after GPS came back    : position error below 5 m again 0.3 s after GPS returned
+at GPS return          : position error 110.6 m
+bank angle             : max 59.7 deg before GPS loss, 20.3 deg without GPS (bank limit lowered to 20 deg at 61.6 s, 65 deg at the end)
+VIO checks, on VIO     : IMU check max 2.85 (limit 1), airspeed check max 4.7 m/s (limit 12)
+VIO rejected           : at 73.6 s (3.5 s after the runaway began), injected VIO velocity error then 10.6 m/s, position error then 12.6 m
+   60.0 s  TEST: GPS switched OFF
+   61.4 s  EKF source set -> 2
+   61.4 s  vehicle: VSW: GPS lost, switched to visual odometry
+   61.4 s  vehicle: VSW: bank limit 20 deg while without GPS
+   70.1 s  TEST: simulated VIO starts running away
+   73.6 s  EKF source set -> 1
+   73.6 s  vehicle: VSW: VIO rejected, disagrees with IMU (2.9)
+   73.6 s  vehicle: VSW: dead reckoning until GPS returns
+  105.0 s  TEST: GPS switched ON
+  115.4 s  EKF source set -> 1
+  115.4 s  vehicle: VSW: GPS good again

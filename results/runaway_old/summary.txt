@@ -1,0 +1,16 @@
+run 'runaway_old' - from the flight log, true vs estimated position matched in time
+before GPS loss        : position error mean    0.39 m, 95% below    0.53 m, max    0.56 m over   90 s
+GPS off, VIO in use    : position error mean 1528.80 m, 95% below 3788.58 m, max 4060.02 m over  179 s
+after GPS came back    : position error below 5 m again 14.6 s after GPS returned
+at GPS return          : position error 4061.2 m
+bank angle             : max 60.2 deg before GPS loss, 61.8 deg without GPS (bank limit unchanged)
+VIO checks, on VIO     : IMU check max 1.63 (limit 1)
+VIO rejected           : never (runaway began at 190.1 s)
+  150.1 s  TEST: GPS switched OFF
+  150.1 s  TEST: simulated VIO starts drifting
+  151.5 s  EKF source set -> 2
+  151.5 s  vehicle: VSW: GPS lost, switched to visual odometry
+  190.1 s  TEST: simulated VIO starts running away
+  330.1 s  TEST: GPS switched ON
+  340.5 s  EKF source set -> 1
+  340.5 s  vehicle: VSW: GPS good again, switched back to GPS

@@ -1,0 +1,10 @@
+    0.0 s  flight mode -> AUTO
+  150.4 s  TEST: GPS switched OFF
+  150.4 s  TEST: simulated VIO starts drifting
+  151.8 s  EKF source set -> 2
+  151.8 s  vehicle: VSW: GPS lost, switched to visual odometry
+  151.8 s  vehicle: VSW: bank limit 20 deg, RTL circle 244 m
+  210.4 s  TEST: wind shift to 9 m/s from 310 deg
+  330.4 s  TEST: GPS switched ON
+  340.8 s  EKF source set -> 1
+  340.8 s  vehicle: VSW: GPS good again, switched back to GPS

@@ -1,0 +1,46 @@
+# vio_plane.parm - ArduPlane: GPS as EKF3 source set 1, visual odometry (VIO) as source set 2.
+# Goes together with scripts/vio_gps_switch.lua, which switches between the two sets automatically.
+
+# Visual odometry input. The VIO computer (later: the Jetson) talks MAVLink on this port.
+# In the simulator, --serial5=sim:vicon: plugs a simulated VIO in here.
+SERIAL5_PROTOCOL 2
+# 921600 baud, as setup/run_vio_d455.sh talks on the Jetson's UART. SERIAL5 is an example: use the
+# flight controller port the Jetson is wired to and give it the same PROTOCOL and BAUD.
+SERIAL5_BAUD 921
+# 1 = MAVLink: takes VISION_POSITION/SPEED_ESTIMATE as they are. While the VIO is not in use, ArduPilot
+# keeps its position lined up with its own (no jump when switching; any VIO drift from before is gone).
+# Not 2 (IntelT265): that one also turns the whole VIO frame to match its heading at the first message -
+# the companion (tools/vio_bridge.py) already starts the VIO in ArduPilot's frame, and in the Gazebo test a
+# 1 degree mismatch there, turned about a point 575 m away, cost 8 m near home (step 3).
+VISO_TYPE 1
+
+# GPS on (auto-detect) - a pure-vision test setup may have turned it off with GPS1_TYPE 0
+GPS1_TYPE 1
+
+# EKF3 only
+AHRS_EKF_TYPE 3
+EK2_ENABLE 0
+EK3_ENABLE 1
+
+# Source set 1: GPS (normal flight). 3 = GPS, 1 = barometer / compass
+EK3_SRC1_POSXY 3
+EK3_SRC1_VELXY 3
+EK3_SRC1_POSZ 1
+EK3_SRC1_VELZ 3
+EK3_SRC1_YAW 1
+
+# Source set 2: GPS lost. 6 = ExternalNav (the VIO) for horizontal position and velocity only;
+# height and vertical speed stay on the barometer (0 = none, the EKF then uses the barometer) and
+# heading on the compass. A downward camera sees height changes worst of all - in the Gazebo tests
+# OpenVINS believed the plane was sinking steadily - so the VIO gets no say in the vertical.
+EK3_SRC2_POSXY 6
+EK3_SRC2_VELXY 6
+EK3_SRC2_POSZ 1
+EK3_SRC2_VELZ 0
+EK3_SRC2_YAW 1
+
+# Fuse velocities only from the active source set
+EK3_SRC_OPTIONS 0
+
+# Lua scripting, for the automatic switch-over
+SCR_ENABLE 1

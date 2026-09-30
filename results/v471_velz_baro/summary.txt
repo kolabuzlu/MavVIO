@@ -1,0 +1,17 @@
+run 'v471_velz_baro' - from the flight log, true vs estimated position matched in time
+before GPS loss        : position error mean    0.41 m, 95% below    0.55 m, max    0.59 m over   90 s
+GPS off, VIO in use    : position error mean   36.28 m, 95% below   68.99 m, max   71.92 m over  178 s
+after GPS came back    : position error below 5 m again 10.6 s after GPS returned
+at GPS return          : position error 71.9 m
+bank angle             : max 64.3 deg before GPS loss, 25.1 deg while the bank limit was 20 deg (189 s), 65 deg at the end
+VIO checks, on VIO     : IMU check max 0.53 (limit 1), airspeed check max 9.7 m/s (limit 12)
+    0.0 s  flight mode -> AUTO
+  150.4 s  TEST: GPS switched OFF
+  150.4 s  TEST: simulated VIO starts drifting
+  151.8 s  EKF source set -> 2
+  151.8 s  vehicle: VSW: GPS lost, switched to visual odometry
+  151.8 s  vehicle: VSW: bank limit 20 deg, RTL circle 244 m
+  210.4 s  TEST: wind shift to 9 m/s from 310 deg
+  330.4 s  TEST: GPS switched ON
+  340.8 s  EKF source set -> 1
+  340.8 s  vehicle: VSW: GPS good again, switched back to GPS

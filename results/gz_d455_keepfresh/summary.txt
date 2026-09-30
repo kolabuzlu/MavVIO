@@ -1,0 +1,24 @@
+run 'gz_d455_keepfresh' - from the flight log, true vs estimated position matched in time
+before GPS loss        : position error mean    0.20 m, 95% below    0.39 m, max    0.45 m over  701 s
+GPS off, VIO in use    : position error mean   23.49 m, 95% below   45.22 m, max   47.38 m over  239 s
+after GPS came back    : position error below 5 m again 10.6 s after GPS returned
+at GPS return          : position error 47.4 m
+bank angle             : max 32.0 deg before GPS loss, 19.5 deg while the bank limit was 20 deg (249 s), 45 deg at the end
+VIO checks, on VIO     : IMU check max 0.35 (limit 1), airspeed check max 7.2 m/s (limit 12)
+RTL                    : at 762.1 s (1.4 s after GPS loss)
+circling home, no GPS  : RTL circle 111-111 m; really 106-153 m from home (mean 144 m), ArduPilot thought 99-144 m
+    0.0 s  flight mode -> FBWA
+   39.0 s  flight mode -> CIRCLE
+   40.1 s  TEST: wind shift to 6 m/s from 250 deg
+   54.1 s  flight mode -> AUTO
+   54.1 s  flight mode -> GUIDED
+  760.7 s  TEST: GPS switched OFF
+  762.1 s  EKF source set -> 2
+  762.1 s  vehicle: VSW: GPS lost, switched to visual odometry
+  762.1 s  vehicle: VSW: bank limit 20 deg, RTL circle 112 m
+  762.1 s  flight mode -> RTL
+  762.1 s  vehicle: VSW: GPS lost, on VIO - returning home (RTL)
+  821.7 s  TEST: wind shift to 9 m/s from 200 deg
+ 1000.6 s  TEST: GPS switched ON
+ 1011.1 s  EKF source set -> 1
+ 1011.1 s  vehicle: VSW: GPS good again, switched back to GPS

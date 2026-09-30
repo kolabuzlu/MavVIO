@@ -1,0 +1,133 @@
+connecting to the simulator on tcp:127.0.0.1:5760 ...
+waiting for pre-arm checks ...
+    Ground start
+    Skipping INS calibration
+    RCInput: decoding UDP (Pulses)
+    Calibrating barometer
+    Barometer 1 calibration complete
+    Barometer 2 calibration complete
+    Airspeed 1 calibration started
+    ArduPilot Ready
+    AHRS: DCM active
+    VSW: GPS/visual odometry switch-over loaded
+    Throttle failsafe off
+    Airspeed 1 calibrated
+    SIM: C: drive almost full (1.1 GB) - stops below 0
+    GPS 1: probing for u-blox at 230400 baud
+    GPS 1: detected u-blox
+    EKF3 IMU0 initialised
+    EKF3 IMU1 initialised
+    EKF3 IMU0 tilt alignment complete
+    EKF3 IMU1 tilt alignment complete
+    EKF3 IMU0 MAG0 initial yaw alignment complete
+    EKF3 IMU1 MAG0 initial yaw alignment complete
+    EKF3 IMU0 origin set
+    EKF3 IMU1 origin set
+    EKF3 IMU0 is using GPS
+    EKF3 IMU1 is using GPS
+    AHRS: EKF3 active
+    Field Elevation Set: 584m
+    Flight plan received
+    Throttle armed
+armed in FBWA - full throttle for take-off
+    1 s  vehicle: Autoland direction= 9
+   37 s  40 m up - CIRCLE
+   37 s  wind 6.0 m/s from 250 deg (Gazebo and SITL)
+   37 s  CIRCLE  alt    40 m  ground 16.3 m/s  air 15.8 m/s  ArduPilot:   585 m from home  really:   580 m  (off by    5 m)  nav: GPS
+   39 s  VIO is reaching the flight controller - 120 s more on GPS
+   42 s  CIRCLE  alt    38 m  ground 19.3 m/s  air 13.4 m/s  ArduPilot:   648 m from home  really:   648 m  (off by    0 m)  nav: GPS
+   47 s  CIRCLE  alt    39 m  ground 17.9 m/s  air 12.6 m/s  ArduPilot:   698 m from home  really:   698 m  (off by    1 m)  nav: GPS
+   52 s  AUTO - flying the rectangle, waiting for the VIO
+   52 s  GUIDED - flying out to N 700 E -700 (990 m from home) to lose the GPS there
+   52 s  CIRCLE  alt    39 m  ground 12.8 m/s  air 12.1 m/s  ArduPilot:   697 m from home  really:   697 m  (off by    0 m)  nav: GPS
+   52 s  vehicle: Mission: 2 WP
+   57 s  GUIDED  alt    50 m  ground  5.9 m/s  air 11.7 m/s  ArduPilot:   669 m from home  really:   669 m  (off by    0 m)  nav: GPS
+   62 s  GUIDED  alt    67 m  ground  6.0 m/s  air 11.7 m/s  ArduPilot:   657 m from home  really:   657 m  (off by    0 m)  nav: GPS
+   67 s  GUIDED  alt    83 m  ground  6.0 m/s  air 11.7 m/s  ArduPilot:   647 m from home  really:   647 m  (off by    0 m)  nav: GPS
+   72 s  GUIDED  alt    97 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   637 m from home  really:   637 m  (off by    2 m)  nav: GPS
+   77 s  GUIDED  alt   100 m  ground  7.0 m/s  air 12.2 m/s  ArduPilot:   628 m from home  really:   628 m  (off by    0 m)  nav: GPS
+   82 s  GUIDED  alt   100 m  ground  6.9 m/s  air 12.2 m/s  ArduPilot:   620 m from home  really:   620 m  (off by    0 m)  nav: GPS
+   87 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   615 m from home  really:   615 m  (off by    0 m)  nav: GPS
+   92 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   612 m from home  really:   612 m  (off by    0 m)  nav: GPS
+   97 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   611 m from home  really:   611 m  (off by    0 m)  nav: GPS
+  102 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   611 m from home  really:   611 m  (off by    0 m)  nav: GPS
+  107 s  GUIDED  alt   100 m  ground  6.8 m/s  air 11.9 m/s  ArduPilot:   613 m from home  really:   613 m  (off by    0 m)  nav: GPS
+  112 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.1 m/s  ArduPilot:   617 m from home  really:   617 m  (off by    0 m)  nav: GPS
+  117 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   624 m from home  really:   624 m  (off by    0 m)  nav: GPS
+  122 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   631 m from home  really:   631 m  (off by    0 m)  nav: GPS
+  127 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   640 m from home  really:   640 m  (off by    0 m)  nav: GPS
+  132 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   652 m from home  really:   652 m  (off by    0 m)  nav: GPS
+  137 s  GUIDED  alt   100 m  ground  6.8 m/s  air 11.9 m/s  ArduPilot:   664 m from home  really:   664 m  (off by    0 m)  nav: GPS
+  142 s  GUIDED  alt   100 m  ground  6.8 m/s  air 11.9 m/s  ArduPilot:   678 m from home  really:   678 m  (off by    0 m)  nav: GPS
+  147 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   694 m from home  really:   694 m  (off by    0 m)  nav: GPS
+  152 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   711 m from home  really:   710 m  (off by    0 m)  nav: GPS
+  157 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   728 m from home  really:   727 m  (off by    0 m)  nav: GPS
+  162 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   748 m from home  really:   747 m  (off by    0 m)  nav: GPS
+  167 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   768 m from home  really:   768 m  (off by    0 m)  nav: GPS
+  172 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   788 m from home  really:   787 m  (off by    0 m)  nav: GPS
+  177 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   810 m from home  really:   810 m  (off by    0 m)  nav: GPS
+  183 s  GUIDED  alt   100 m  ground  6.7 m/s  air 11.9 m/s  ArduPilot:   833 m from home  really:   833 m  (off by    0 m)  nav: GPS
+  188 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   855 m from home  really:   855 m  (off by    0 m)  nav: GPS
+  192 s  ===== GPS OFF ===== (878 m from home)
+  193 s  GUIDED  alt   100 m  ground  6.8 m/s  air 12.0 m/s  ArduPilot:   881 m from home  really:   880 m  (off by    0 m)  nav: GPS
+  193 s  vehicle: VSW: GPS lost, switched to visual odometry
+  193 s  vehicle: VSW: bank limit 20 deg, RTL circle 111 m
+  193 s  vehicle: VSW: GPS lost, on VIO - returning home (RTL)
+  198 s  RTL     alt   100 m  ground  8.7 m/s  air 12.1 m/s  ArduPilot:   890 m from home  really:   886 m  (off by    6 m)  nav: VIO
+  203 s  RTL     alt   100 m  ground 13.2 m/s  air 11.9 m/s  ArduPilot:   836 m from home  really:   834 m  (off by    5 m)  nav: VIO
+  208 s  RTL     alt   100 m  ground 13.5 m/s  air 12.0 m/s  ArduPilot:   773 m from home  really:   764 m  (off by   11 m)  nav: VIO
+  212 s  ===== CAMERA STOPPED (IMU goes on) =====
+  213 s  RTL     alt   100 m  ground 13.5 m/s  air 12.1 m/s  ArduPilot:   705 m from home  really:   698 m  (off by   10 m)  nav: VIO
+  213 s  vehicle: VIO: no camera updates - held back
+  213 s  vehicle: VSW: visual odometry unhealthy while in use
+  218 s  RTL     alt   100 m  ground 13.4 m/s  air 12.0 m/s  ArduPilot:   638 m from home  really:   631 m  (off by    9 m)  nav: VIO
+  223 s  RTL     alt   100 m  ground 13.5 m/s  air 12.1 m/s  ArduPilot:   571 m from home  really:   564 m  (off by    9 m)  nav: VIO
+  228 s  RTL     alt   100 m  ground 13.5 m/s  air 12.0 m/s  ArduPilot:   503 m from home  really:   496 m  (off by    9 m)  nav: VIO
+  233 s  RTL     alt   100 m  ground 13.5 m/s  air 12.0 m/s  ArduPilot:   435 m from home  really:   429 m  (off by    8 m)  nav: VIO
+  238 s  RTL     alt   100 m  ground 13.5 m/s  air 12.0 m/s  ArduPilot:   367 m from home  really:   361 m  (off by    8 m)  nav: VIO
+  243 s  RTL     alt   100 m  ground 13.4 m/s  air 12.1 m/s  ArduPilot:   296 m from home  really:   291 m  (off by    8 m)  nav: VIO
+  248 s  RTL     alt   100 m  ground 13.4 m/s  air 12.1 m/s  ArduPilot:   228 m from home  really:   223 m  (off by    7 m)  nav: VIO
+  252 s  ===== CAMERA BACK =====
+  252 s  vehicle: VIO: 40 s without camera updates - restart
+  253 s  RTL     alt   100 m  ground 13.4 m/s  air 12.1 m/s  ArduPilot:   160 m from home  really:   156 m  (off by    7 m)  nav: VIO
+  257 s  vehicle: VIO: fresh start without GPS
+  257 s  vehicle: VIO: camera updates again
+  258 s  RTL     alt   100 m  ground 17.8 m/s  air 12.1 m/s  ArduPilot:    99 m from home  really:    97 m  (off by    7 m)  nav: VIO
+  263 s  RTL     alt   100 m  ground 17.4 m/s  air 12.2 m/s  ArduPilot:   109 m from home  really:   115 m  (off by    8 m)  nav: VIO
+  268 s  RTL     alt   100 m  ground 12.0 m/s  air 11.9 m/s  ArduPilot:   121 m from home  really:   129 m  (off by    8 m)  nav: VIO
+  273 s  RTL     alt   100 m  ground  9.2 m/s  air 11.8 m/s  ArduPilot:   120 m from home  really:   128 m  (off by    9 m)  nav: VIO
+  278 s  RTL     alt   100 m  ground  7.9 m/s  air 12.0 m/s  ArduPilot:   119 m from home  really:   128 m  (off by    9 m)  nav: VIO
+  283 s  RTL     alt   100 m  ground  7.0 m/s  air 12.0 m/s  ArduPilot:   119 m from home  really:   128 m  (off by    9 m)  nav: VIO
+  288 s  RTL     alt   100 m  ground  6.5 m/s  air 12.0 m/s  ArduPilot:   119 m from home  really:   126 m  (off by    9 m)  nav: VIO
+  293 s  RTL     alt   100 m  ground  6.4 m/s  air 12.0 m/s  ArduPilot:   118 m from home  really:   124 m  (off by    9 m)  nav: VIO
+  298 s  RTL     alt   100 m  ground  6.5 m/s  air 12.0 m/s  ArduPilot:   118 m from home  really:   122 m  (off by    8 m)  nav: VIO
+  302 s  ===== OpenVINS KILLED =====
+  303 s  RTL     alt   100 m  ground  6.6 m/s  air 12.0 m/s  ArduPilot:   118 m from home  really:   120 m  (off by    8 m)  nav: VIO
+  305 s  vehicle: VIO: stopped - fresh start from ArduPilot's estima
+  306 s  vehicle: VIO: fresh start without GPS
+  308 s  RTL     alt   100 m  ground  7.3 m/s  air 12.0 m/s  ArduPilot:   118 m from home  really:   119 m  (off by    8 m)  nav: VIO
+  313 s  RTL     alt   100 m  ground  8.4 m/s  air 12.0 m/s  ArduPilot:   118 m from home  really:   117 m  (off by    8 m)  nav: VIO
+  318 s  RTL     alt   100 m  ground  9.9 m/s  air 12.0 m/s  ArduPilot:   118 m from home  really:   117 m  (off by    7 m)  nav: VIO
+  323 s  RTL     alt   100 m  ground 12.8 m/s  air 12.1 m/s  ArduPilot:   119 m from home  really:   118 m  (off by    6 m)  nav: VIO
+  328 s  RTL     alt   100 m  ground 16.5 m/s  air 12.0 m/s  ArduPilot:   120 m from home  really:   119 m  (off by    6 m)  nav: VIO
+  333 s  RTL     alt   100 m  ground 18.1 m/s  air 12.1 m/s  ArduPilot:   121 m from home  really:   121 m  (off by    4 m)  nav: VIO
+  338 s  RTL     alt   100 m  ground 15.4 m/s  air 12.0 m/s  ArduPilot:   120 m from home  really:   122 m  (off by    4 m)  nav: VIO
+  343 s  RTL     alt   100 m  ground 11.6 m/s  air 11.9 m/s  ArduPilot:   121 m from home  really:   124 m  (off by    4 m)  nav: VIO
+  348 s  RTL     alt   100 m  ground  9.3 m/s  air 11.9 m/s  ArduPilot:   120 m from home  really:   123 m  (off by    4 m)  nav: VIO
+  353 s  RTL     alt   100 m  ground  8.0 m/s  air 11.9 m/s  ArduPilot:   119 m from home  really:   123 m  (off by    5 m)  nav: VIO
+  358 s  RTL     alt   100 m  ground  7.2 m/s  air 12.1 m/s  ArduPilot:   119 m from home  really:   124 m  (off by    7 m)  nav: VIO
+  363 s  RTL     alt   100 m  ground  6.5 m/s  air 12.0 m/s  ArduPilot:   119 m from home  really:   124 m  (off by    8 m)  nav: VIO
+  368 s  RTL     alt   100 m  ground  6.4 m/s  air 11.9 m/s  ArduPilot:   119 m from home  really:   123 m  (off by    8 m)  nav: VIO
+  373 s  RTL     alt   100 m  ground  6.3 m/s  air 12.0 m/s  ArduPilot:   118 m from home  really:   122 m  (off by    9 m)  nav: VIO
+  379 s  RTL     alt   100 m  ground  6.6 m/s  air 12.0 m/s  ArduPilot:   119 m from home  really:   122 m  (off by    9 m)  nav: VIO
+  384 s  RTL     alt   100 m  ground  7.4 m/s  air 12.0 m/s  ArduPilot:   119 m from home  really:   121 m  (off by   10 m)  nav: VIO
+  389 s  RTL     alt   100 m  ground  8.4 m/s  air 12.0 m/s  ArduPilot:   119 m from home  really:   119 m  (off by   10 m)  nav: VIO
+  392 s  ===== GPS ON =====
+  394 s  RTL     alt   100 m  ground 10.3 m/s  air 12.0 m/s  ArduPilot:   119 m from home  really:   117 m  (off by   10 m)  nav: VIO
+  399 s  RTL     alt   100 m  ground 13.4 m/s  air 12.0 m/s  ArduPilot:   119 m from home  really:   115 m  (off by   10 m)  nav: VIO
+  402 s  vehicle: VSW: GPS good again, switched back to GPS
+  404 s  RTL     alt   100 m  ground 18.6 m/s  air 12.6 m/s  ArduPilot:   113 m from home  really:   113 m  (off by    1 m)  nav: GPS
+  409 s  RTL     alt   100 m  ground 16.3 m/s  air 12.0 m/s  ArduPilot:    80 m from home  really:    80 m  (off by    0 m)  nav: GPS
+
+without GPS (200 s): ArduPilot's position off by up to 11 m (mean 7 m); in the second half the plane was really 117-124 m from home
+done - the plane keeps flying; stop the simulator with setup/stop_gazebo_vio.sh

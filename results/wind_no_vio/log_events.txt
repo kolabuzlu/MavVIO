@@ -1,0 +1,4 @@
+  150.1 s  TEST: GPS switched OFF
+  151.3 s  vehicle: VSW: GPS lost but visual odometry unhealthy
+  210.1 s  TEST: wind shift to 9 m/s from 310 deg
+  330.1 s  TEST: GPS switched ON

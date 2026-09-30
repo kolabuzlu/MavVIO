@@ -1,0 +1,26 @@
+run 'v471_rtl_runaway' - from the flight log, true vs estimated position matched in time
+before GPS loss        : position error mean    0.41 m, 95% below    0.53 m, max    0.58 m over   90 s
+GPS off, VIO in use    : position error mean    9.20 m, 95% below   16.66 m, max   21.84 m over   42 s
+GPS off, dead reckoning: position error mean  121.39 m, 95% below  191.95 m, max  203.89 m over  138 s
+after GPS came back    : position error below 5 m again 0.4 s after GPS returned
+at GPS return          : position error 204.0 m
+bank angle             : max 63.6 deg before GPS loss, 25.0 deg while the bank limit was 20 deg (42 s), 65 deg at the end
+VIO checks, on VIO     : IMU check max 1.75 (limit 1), airspeed check max 5.1 m/s (limit 12)
+VIO rejected           : at 193.3 s (3.0 s after the runaway began), injected VIO velocity error then 9.2 m/s, position error then 22.0 m
+RTL                    : at 203.4 s (53.1 s after GPS loss)
+circling home, no GPS  : RTL circle 80-80 m; really 11-276 m from home (mean 157 m), ArduPilot thought 74-108 m
+    0.0 s  flight mode -> AUTO
+  150.3 s  TEST: GPS switched OFF
+  150.3 s  TEST: simulated VIO starts drifting
+  151.7 s  EKF source set -> 2
+  151.7 s  vehicle: VSW: GPS lost, switched to visual odometry
+  151.7 s  vehicle: VSW: bank limit 20 deg, RTL circle 244 m
+  190.3 s  TEST: simulated VIO starts running away
+  193.3 s  EKF source set -> 1
+  193.3 s  vehicle: VSW: VIO rejected, disagrees with IMU (1.4)
+  193.3 s  vehicle: VSW: dead reckoning until GPS returns
+  203.4 s  flight mode -> RTL
+  203.4 s  vehicle: VSW: no GPS or VIO - returning home (RTL)
+  330.3 s  TEST: GPS switched ON
+  340.7 s  EKF source set -> 1
+  340.7 s  vehicle: VSW: GPS good again

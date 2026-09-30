@@ -1,0 +1,23 @@
+run 'rtl_long_dropout' - from the flight log, true vs estimated position matched in time
+before GPS loss        : position error mean    0.39 m, 95% below    0.57 m, max    0.62 m over   90 s
+GPS off, VIO in use    : position error mean   36.02 m, 95% below   68.08 m, max   71.47 m over  179 s
+after GPS came back    : position error below 5 m again 10.6 s after GPS returned
+at GPS return          : position error 71.5 m
+bank angle             : max 60.8 deg before GPS loss, 21.3 deg while the bank limit was 20 deg (189 s), 65 deg at the end
+VIO checks, on VIO     : IMU check max 0.54 (limit 1), airspeed check max 2.1 m/s (limit 12)
+RTL                    : at 220.6 s (70.5 s after GPS loss)
+circling home, no GPS  : RTL circle 251-251 m; really 215-321 m from home (mean 273 m), ArduPilot thought 223-324 m
+    0.0 s  flight mode -> AUTO
+  150.0 s  TEST: GPS switched OFF
+  150.0 s  TEST: simulated VIO starts drifting
+  151.3 s  EKF source set -> 2
+  151.3 s  vehicle: VSW: GPS lost, switched to visual odometry
+  151.3 s  vehicle: VSW: bank limit 20 deg, RTL circle 252 m
+  210.1 s  TEST: simulated VIO dropout starts
+  210.5 s  vehicle: VSW: visual odometry unhealthy while in use
+  220.5 s  flight mode -> RTL
+  220.5 s  vehicle: VSW: no GPS or VIO - returning home (RTL)
+  230.1 s  TEST: simulated VIO dropout ends
+  330.1 s  TEST: GPS switched ON
+  340.5 s  EKF source set -> 1
+  340.5 s  vehicle: VSW: GPS good again, switched back to GPS

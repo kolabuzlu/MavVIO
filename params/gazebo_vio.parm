@@ -1,0 +1,19 @@
+# gazebo_vio.parm - extra settings for the Zephyr in the Gazebo VIO world (setup/run_gazebo_vio.sh),
+# loaded after ArduPilot's gazebo-zephyr.parm and our params/vio_plane.parm (the real plane's VIO setup:
+# EKF3 source set 1 = GPS, set 2 = visual odometry, VISO_TYPE 2, SCR_ENABLE 1 for vio_gps_switch.lua).
+
+# log from arming, like the other simulator tests
+LOG_DISARMED 0
+
+# Step 3: the VIO starts in the air from the flight controller's own state (tools/vio_bridge.py), so it
+# cannot be healthy at arming - skip only the visual odometry arming check (bit 18). The real plane
+# needs the same.
+ARMING_SKIPCHK 262144
+
+# the companion program (vio_bridge.py) talks MAVLink on TCP 5763 (SERIAL2)
+SERIAL2_PROTOCOL 2
+
+# an airspeed sensor like the real plane's (gazebo-zephyr.parm turns it off): SITL works it out from the
+# plane's speed in Gazebo minus the wind SIM_WIND_* - for wind tests set the same wind in the Gazebo world
+ARSPD_TYPE 100
+ARSPD_USE 1
